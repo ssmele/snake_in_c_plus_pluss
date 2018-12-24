@@ -12,7 +12,7 @@ constexpr float snake_body_width(20.0), snake_body_height(20.0);
 constexpr auto window_title = "Snake!";
 
 // TODO: Need to fine a good way to mangae fonts.
-constexpr auto font_location = "C:/Users/stone/Documentsasdf/Libs/SFML-2.5.1/examples/shader/resources/sansation.ttf";
+constexpr auto font_location = "C:/Users/stone/Documents/Libs/SFML-2.5.1/examples/shader/resources/sansation.ttf";
 
 struct Rectangle {
 	/*
@@ -149,7 +149,7 @@ struct Snake {
 
 bool has_collided(Rectangle r1, Rectangle r2) {
 	/*
-	Method that checks for collision between two Rectangles.
+	Method that checks for collision between two Rectangles
 	*/
 	bool lhs_collision = r1.right() > r2.left() && r1.left() < r2.left();
 	bool rhs_collision = r1.left() < r2.right() && r1.right() > r2.left();
@@ -166,8 +166,7 @@ void load_game_font(Font * font) {
 	if (!font->loadFromFile(font_location))
 	{
 		cout << "Error loading font" << endl;
-		//exit(1);
-		font->loadFromFile("arial.ttf");
+		exit(1);
 	}
 }
 
